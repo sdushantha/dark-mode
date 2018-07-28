@@ -3,8 +3,7 @@
 > Control the macOS dark mode from the terminal
 
 <p align="center">
-<a href="https://asciinema.org/a/185168">
-<img src="https://i.giphy.com/5UH6rHeHCzvV3uLThO.gif">
+<img src=https://raw.githubusercontent.com/sdushantha/dark-mode/master/preview.gif>
 </a>
 </p>
 
