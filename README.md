@@ -2,6 +2,8 @@
 
 > Control the macOS dark mode from the terminal
 
+*Requires macOS 10.10 or later. Tested on 10.13*
+
 <p align="center">
 <img src=https://raw.githubusercontent.com/sdushantha/dark-mode/master/preview.gif>
 </a>
