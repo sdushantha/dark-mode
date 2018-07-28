@@ -9,8 +9,6 @@ try:
 except ModuleNotFoundError:
     print("PyObjC is not installed!\n$ pip3 install pyobjc")
 
-
-
 prefix = "tell application \"System Events\" to tell appearance preferences to"
 
 
@@ -28,8 +26,11 @@ Commands
     print(help_message)
 
 
-# Gives the current status, "Dark Mode" or "Light Mode"
 def status():
+    """
+    Get current status, "Dark Mode" or "Light Mode".
+    """
+
     try:
         # Wish I could make the line below shorter but not sure how
         status = subprocess.check_output(["defaults", "read", "-g", "AppleInterfaceStyle"], stderr=subprocess.STDOUT).decode('UTF-8')
@@ -43,6 +44,13 @@ def status():
 
 
 def set_mode(mode):
+    """
+    Set the mode
+    
+    :param mode: The mode to be set
+    :type mode: str
+    """
+
     if mode == "Null":
         mode = "not dark mode"
     
