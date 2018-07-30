@@ -14,9 +14,6 @@
 ```bash
 # clone the repo
 $ git clone https://github.com/sdushantha/dark-mode.git
-
-# install the requirements
-$ pip3 install -r requirements.txt
 ```
 
 ## :hammer: Usage
