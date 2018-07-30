@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
 
-import subprocess
+import subprocess as sp
 import sys
 import platform
+from os import system
 
-try:
-    from Foundation import *
-except ModuleNotFoundError:
-    print("PyObjC is not installed!\n$ pip3 install pyobjc")
-
-prefix = "tell application \"System Events\" to tell appearance preferences to"
+prefix = """osascript -e 'tell application \"System Events\" to tell appearance preferences to"""
+get_status = "defaults read -g AppleInterfaceStyle"
 
 
 def show_help():
@@ -32,11 +29,10 @@ def status():
     """
 
     try:
-        # Wish I could make the line below shorter but not sure how
-        status = subprocess.check_output(["defaults", "read", "-g", "AppleInterfaceStyle"], stderr=subprocess.STDOUT).decode('UTF-8')
+        status = sp.check_output(get_status.split(), stderr=sp.STDOUT).decode()
         status = status.replace("\n", "")
 
-    except subprocess.CalledProcessError:
+    except sp.CalledProcessError:
         return "Light Mode"
 
     if status == "Dark":
@@ -54,10 +50,11 @@ def set_mode(mode):
     if mode == "Null":
         mode = "not dark mode"
     
-    cmd = prefix+" set dark mode to {}".format(mode)
+    cmd = prefix+" set dark mode to {}'".format(mode)
     
-    s = NSAppleScript.alloc().initWithSource_(cmd)
-    s.executeAndReturnError_(None)
+    # I know I should use subprocess but it messes up.
+    # I will try to fix it.
+    system(cmd)
 
 
 def main():
