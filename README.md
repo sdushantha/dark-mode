@@ -9,14 +9,14 @@
 </a>
 </p>
 
-## :floppy_disk: Installation
+## Installation
 
 ```bash
 # clone the repo
 $ git clone https://github.com/sdushantha/dark-mode.git
 ```
 
-## :hammer: Usage
+## Usage
 ```bash
 Usage: python3 dark-mode.py [command]
 
@@ -27,7 +27,7 @@ Commands
   status  Dark mode status
 ```
 
-## :scroll: License
+## License
 MIT License
 
 Copyright (c) 2018 Siddharth Dushantha
